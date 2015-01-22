@@ -23,7 +23,6 @@ The banner will show up wherever you put this snippet of code on your page: [**(
 ```
 ![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
 
-
 ---------------------------
 
 #### Red version:
@@ -34,6 +33,8 @@ Put this anywhere on your page that you want the banner to show up.
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
 ![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
+
+---------------------------
 
 #### Optimizing for fast loading:
 
