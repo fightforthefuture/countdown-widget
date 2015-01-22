@@ -37,23 +37,21 @@ The banner will show up wherever you put this snippet of code on your page:
 You can speed up loading of your page by loading the banner asynchronously.
 Here's how.
 
-1. Place this code at the bottom of your page, right before the closing
-/BODY tag:
-```html
-<script type="text/javascript">
-var _cd_options = {
-    theme: 'blue', // or 'red'
-    elementId: '_cd_container'
-}
-</script>
-<script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async>
-```
+1. Place this code at the bottom of your page, right before the closing /BODY tag:
+  ```html
+  <script type="text/javascript">
+  var _cd_options = {
+      theme: 'blue', // or 'red'
+      elementId: '_cd_container'
+  }
+  </script>
+  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async>
+  ```
 
-2. Then, place this empty DIV anywhere on your page where you want the banner
-to appear:
-```html
-<div id="_cd_container"></div>
-```
+2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
+  ```html
+  <div id="_cd_container"></div>
+  ```
 
 
 Which browsers are supported
