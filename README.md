@@ -25,6 +25,7 @@ The banner will show up wherever you put this snippet of code on your page: [**(
 
 #### Red version:
 
+Put this anywhere on your page that you want the banner to show up.
 ```html
 <script type="text/javascript">var _cd_options = { theme: 'red' };</script>
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
