@@ -15,9 +15,9 @@ the widget, please [submit an issue][4] or [email Jeff Lyon][5].
 Installation Instructions (Banner)
 ---------------------------------
 
-#### Basic installation: [**(See demo)**][3]
+#### Basic installation:
 
-The banner will show up wherever you put this snippet of code on your page:
+[**(See demo)**][3] The banner will show up wherever you put this snippet of code on your page:
 ```html
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
