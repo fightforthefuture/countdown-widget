@@ -17,7 +17,7 @@ Installation Instructions (Banner)
 
 #### Basic installation:
 
-[**(See demo)**][3] The banner will show up wherever you put this snippet of code on your page:
+The banner will show up wherever you put this snippet of code on your page: [**(See demo)**][3]
 ```html
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
