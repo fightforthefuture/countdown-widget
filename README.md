@@ -23,6 +23,9 @@ The banner will show up wherever you put this snippet of code on your page: [**(
 ```
 ![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
 
+
+---------------------------
+
 #### Red version:
 
 Put this anywhere on your page that you want the banner to show up.
