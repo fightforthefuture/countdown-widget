@@ -16,8 +16,6 @@ Installation Instructions (Banner)
 ---------------------------------
 [**Click here to see the demo**][3]
 
-![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
-![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
 
 #### Basic installation:
 
@@ -25,12 +23,15 @@ The banner will show up wherever you put this snippet of code on your page:
 ```html
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
+![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
 
-(Red version):
+#### Red version:
+
 ```html
 <script type="text/javascript">var _cd_options = { theme: 'red' };</script>
 <div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
+![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
 
 #### Optimizing for fast loading:
 
