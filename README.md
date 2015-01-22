@@ -17,7 +17,7 @@ Installation Instructions (Banner)
 [**Click here to see the demo**][3]
 
 ![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
-![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
+![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
 
 #### Basic installation:
 
