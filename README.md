@@ -14,10 +14,8 @@ the widget, please [submit an issue][4] or [email Jeff Lyon][5].
 
 Installation Instructions (Banner)
 ---------------------------------
-[**Click here to see the demo**][3]
 
-
-#### Basic installation:
+#### Basic installation: [**(See demo)**][3]
 
 The banner will show up wherever you put this snippet of code on your page:
 ```html
