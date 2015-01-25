@@ -48,7 +48,7 @@ window.addEventListener('message', function(e) {
 var sanitize = function(str)
 {
     str = str.replace(/\</g, '&lt;');
-    str = str.replace(/javascript\:/gi, 'java script -');
+    str = str.replace(/javascript\:/gi, 'lolscript -');
     return str;
 }
 
@@ -78,16 +78,32 @@ var trackLeaderboardStat = function(options)
         session: session
     };
 
-    $.ajax({
-        url: "https://leaderboard.fightforthefuture.org/log",
-        // url: "http://debbie:3019/log",    // JL TEST ~ 
-        type: "post",
-        dataType: "json",
-        data: data,
-        success: function(res) {
+    // Serialize data
+    var params = '';
+    for (var key in data) {
+        if (params.length !== 0) {
+            params += '&';
+        }
+
+        params += key + '=' + data[key];
+    }
+
+    var http = new XMLHttpRequest();
+    var url = 'https://leaderboard.fightforthefuture.org/log';
+    http.open('POST', url, true);
+
+    // Send the proper header information along with the request
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+     // Call a function when the state changes.
+    http.onreadystatechange = function() {
+        if (http.readyState == 4 && http.status == 200) {
+            var res = JSON.parse(http.responseText);
             options.callback(res);
         }
-    });
+    };
+
+    http.send(params);
 }
 
 /**
@@ -105,15 +121,16 @@ var guid = function() {
     return _p8() + _p8(true) + _p8(true) + _p8();
 }
 
-$(document).ready(function() {
-	sendMessage('getAnimation');
+function onDOMReady() {
+    sendMessage('getAnimation');
+}
 
-	// Add close button listener.
-	$('#close').on('mousedown', function(e) {
-		e.preventDefault();
-		sendMessage('stop');
-	});
-});
+var readyState = document.readyState;
+if (readyState === 'interactive' || readyState === "complete") {
+    onDOMReady();
+} else {
+    document.addEventListener('DOMContentLoaded', onDOMReady);
+}
 
 var host = null;  // this will get populated with the domain of the widget install
 var session = guid();

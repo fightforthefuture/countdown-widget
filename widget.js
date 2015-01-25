@@ -14,7 +14,7 @@
  FOR A PARTICULAR PURPOSE. See the GNU GPL for more details.
 
  As additional permission under GNU GPL version 3 section 7, you
- may distribute non-source (e.g., minimized or compacted) forms of
+ may distribute non-source (e.g., minimized or compacted) forms of 
  that code without the copy of the GNU GPL normally required by
  section 4, provided you include this license notice and a URL
  through which recipients can access the Corresponding Source.
@@ -70,7 +70,7 @@ var _cd_animations = {
 		// Default options: Override these with _cd_options object (see above)
 		options: {
 			modalAnimation: 'banner',
-			width: 324,
+			width: 320,
 			height: 142,
 			url: 'https://www.battleforthenet.com/',
 			theme: 'blue',
@@ -97,7 +97,7 @@ var _cd_animations = {
 				var el = document.getElementById(this.options.elementId);
 			else if (_CD_INJECT_ELEM)
 				var el = _CD_INJECT_ELEM;
-			
+
 			if (!el)
 				return console.error('No element found for Countdown Widget');
 
@@ -130,13 +130,13 @@ var _cd_util = {
 		document.head.appendChild(style);
 	},
 
-	// Create the iframe used to display the animation  
+	// Create the iframe used to display the animation
 	createIframe: function(el, animation) {
 		var iframe = document.createElement('iframe');
 		iframe.id = '_cd_iframe';
 		iframe.src = _cd_options.iframe_base_path + '/' + animation + '.html';
 		iframe.frameBorder = 0;
-		iframe.allowTransparency = true; 
+		iframe.allowTransparency = true;
 		iframe.style.display = 'none';
 		el.appendChild(iframe);
 		return iframe;

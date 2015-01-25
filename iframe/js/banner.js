@@ -35,9 +35,9 @@ var animations = {
         },
         start: function() {
             if (this.options.theme == 'red')
-                $('body').addClass('red');
-            
-            $('#banner').click(this.doClick.bind(this));
+                document.body.className += ' red ';
+
+            document.querySelector('#banner').addEventListener('click', this.doClick.bind(this), false);
         },
 
         getUrl: function() {
@@ -56,10 +56,10 @@ var animations = {
     }
 }
 
-if (window.location.href.indexOf('RED') != -1) 
+if (window.location.href.indexOf('RED') != -1)
     animations.banner.options.theme = 'red';
 
-if (window.location.href.indexOf('EMBED') != -1) 
+if (window.location.href.indexOf('EMBED') != -1)
     animations.banner.start();
 
 function Countdown() {
@@ -135,7 +135,7 @@ Countdown.prototype.updateDates = function(difference) {
                 +(c ? '.' : '.')+this.padNumber(hours)
                 +(c ? ':' : ' ')+this.padNumber(minutes)
                 +(c ? ':' : ' ')+this.padNumber(seconds);
-    
+
     document.getElementById('remaining').textContent = str;
 };
 
