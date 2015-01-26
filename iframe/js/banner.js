@@ -131,10 +131,16 @@ Countdown.prototype.updateDates = function(difference) {
     var seconds = Math.floor(difference / this.constants.second);
     difference -= seconds * this.constants.second;
 
+    /*
     var str =   this.padNumber(days)
                 +(c ? '.' : '.')+this.padNumber(hours)
                 +(c ? ':' : ' ')+this.padNumber(minutes)
                 +(c ? ':' : ' ')+this.padNumber(seconds);
+    */
+    var str =   this.padNumber(days)
+                +'.'+this.padNumber(hours)
+                +':'+this.padNumber(minutes)
+                +':'+this.padNumber(seconds);
 
     document.getElementById('remaining').textContent = str;
 };
