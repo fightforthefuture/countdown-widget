@@ -1,6 +1,6 @@
 The Internet Countdown Widget!
 ------------------------------
-#### Join the battle for net neutrality with our Internet Countdown widget!
+#### Join the battle for net neutrality with the Internet Countdown widget!
 
 [**The FCC is voting on net neutrality rules**][1] on February 26th, 2015. But
 cable monopolies are trying to derail the process. The goal of this
