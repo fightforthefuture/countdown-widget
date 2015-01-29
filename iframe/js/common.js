@@ -71,7 +71,7 @@ var trackLeaderboardStat = function(options)
         return;
 
     var data = {
-        campaign: 'internetslowdown',
+        campaign: 'internetcountdown',
         stat: options.stat,
         data: options.data,
         host: host,
@@ -89,7 +89,7 @@ var trackLeaderboardStat = function(options)
     }
 
     var http = new XMLHttpRequest();
-    var url = 'https://leaderboard.fightforthefuture.org/log';
+    var url = 'https://fftf-host-counter.herokuapp.com/log';
     http.open('POST', url, true);
 
     // Send the proper header information along with the request
