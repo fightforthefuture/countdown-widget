@@ -60,7 +60,7 @@ if (window.location.href.indexOf('RED') != -1)
     animations.ad.options.theme = 'red';
 
 if (window.location.href.indexOf('EMBED') != -1)
-    animations.ad.start();
+    animations.ad.start(); 
 
 function Countdown() {
     this.date = new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime();
