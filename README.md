@@ -12,6 +12,39 @@ To stay up-to-date on developments, please subscribe to our
 the widget, please [submit an issue][4] or [email Jeff Lyon][5].
 
 
+Installation Instructions (Ad)
+------------------------------
+
+#### Basic installation:
+
+The ad will show up wherever you put this snippet of code on your page: [**(See demo)**][8]
+```html
+<script type="text/javascript">var _cd_options = { animation: 'ad' };</script>
+<div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
+```
+![Ad](https://fightforthefuture.github.io/countdown-widget/demos/ad.png)
+
+#### Optimizing for fast loading:
+
+You can speed up loading of your page by loading the ad asynchronously.
+Here's how.
+
+1. Place this code at the bottom of your page, right before the closing /BODY tag:
+  ```html
+  <script type="text/javascript">
+  var _cd_options = {
+      animation: 'ad',
+      elementId: '_cd_container'
+  }
+  </script>
+  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async>
+  ```
+
+2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
+  ```html
+  <div id="_cd_container"></div>
+  ```
+
 Installation Instructions (Banner)
 ---------------------------------
 
@@ -70,3 +103,4 @@ Modern browsers, and the two latest versions of Internet Explorer (10 and 11).
 [5]: mailto:jeff@fightforthefuture.org
 [6]: https://github.com/fightforthefuture/countdown-widget/blob/master/widget.js
 [7]: https://fightforthefuture.github.io/countdown-widget/demos/banner.dark.html
+[8]: https://fightforthefuture.github.io/countdown-widget/demos/ad.html

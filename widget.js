@@ -70,8 +70,6 @@ var _cd_animations = {
 		// Default options: Override these with _cd_options object (see above)
 		options: {
 			modalAnimation: 'banner',
-			width: 320,
-			height: 142,
 			url: 'https://www.battleforthenet.com/',
 			theme: 'blue',
 			elementId: null
@@ -86,11 +84,7 @@ var _cd_animations = {
 		// what to do when the animation starts
 		start: function() {
 
-			var css = '#_cd_iframe { \
-					width: '+this.options.width+'px; \
-					height: '+this.options.height+'px; \
-				}';
-
+			var css = '#_cd_iframe { width: 320px; height: 142px; }';
 			_cd_util.injectCSS('_cd_iframe_css', css);
 
 			if (this.options.elementId)
@@ -103,13 +97,43 @@ var _cd_animations = {
 
 			var iframe = _cd_util.createIframe(el, this.options.modalAnimation);
 			_cd_util.bindIframeCommunicator(iframe, this);
+		}
+	},
+
+	// BANNER ANIMATION
+	ad: {
+
+		// Default options: Override these with _cd_options object (see above)
+		options: {
+			modalAnimation: 'ad',
+			url: 'https://www.battleforthenet.com/',
+			elementId: null
 		},
 
-		// what to do when the animation stops
-		stop: function() {
-			_cd_util.destroyIframe();
+		// init copies the _cd_options properties over the default options
+		init: function(options) {
+			for (var k in options) this.options[k] = options[k];
+			return this;
+		},
+
+		// what to do when the animation starts
+		start: function() {
+
+			var css = '#_cd_iframe { width: 300px; height: 250px; }';
+			_cd_util.injectCSS('_cd_iframe_css', css);
+
+			if (this.options.elementId)
+				var el = document.getElementById(this.options.elementId);
+			else if (_CD_INJECT_ELEM)
+				var el = _CD_INJECT_ELEM;
+
+			if (!el)
+				return console.error('No element found for Countdown Widget');
+
+			var iframe = _cd_util.createIframe(el, this.options.modalAnimation);
+			_cd_util.bindIframeCommunicator(iframe, this);
 		}
-	}
+	},
 }
 
 /**
@@ -177,9 +201,6 @@ var _cd_util = {
 				case 'getAnimation':
 					iframe.style.display = 'block';
 					sendMessage('putAnimation', animation.options);
-					break;
-				case 'stop':
-					animation.stop();
 					break;
 			}
 		}, false);
