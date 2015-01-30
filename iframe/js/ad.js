@@ -41,15 +41,15 @@ var animations = {
         },
 
         getUrl: function() {
-            return sanitize(this.options.url)+'?from=banner';
+            return sanitize(this.options.url)+'?from=ad';
         },
 
         doClick: function(e) {
             e.preventDefault();
-            window.open(animations.banner.getUrl());
+            window.open(animations.ad.getUrl());
             trackLeaderboardStat({
                 stat: 'click',
-                data: animations.banner.getUrl(),
+                data: animations.ad.getUrl(),
                 callback: function() {}
             });
         }
@@ -57,10 +57,10 @@ var animations = {
 }
 
 if (window.location.href.indexOf('RED') != -1)
-    animations.banner.options.theme = 'red';
+    animations.ad.options.theme = 'red';
 
 if (window.location.href.indexOf('EMBED') != -1)
-    animations.banner.start();
+    animations.ad.start();
 
 function Countdown() {
     this.date = new Date(Date.UTC(2015, 1, 26, 15, 30, 0)).getTime();
