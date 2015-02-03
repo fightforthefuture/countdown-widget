@@ -37,7 +37,7 @@ Here's how.
       elementId: '_cd_container'
   }
   </script>
-  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async>
+  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
   ```
 
 2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
@@ -82,7 +82,7 @@ Here's how.
       elementId: '_cd_container'
   }
   </script>
-  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async>
+  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
   ```
 
 2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
