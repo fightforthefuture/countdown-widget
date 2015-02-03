@@ -20,7 +20,7 @@ Installation Instructions (Ad)
 The ad will show up wherever you put this snippet of code on your page: [**(See demo)**][8]
 ```html
 <script type="text/javascript">var _cd_options = { animation: 'ad' };</script>
-<div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
+<div><script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
 ![Ad](https://fightforthefuture.github.io/countdown-widget/demos/ad.png)
 
@@ -37,7 +37,7 @@ Here's how.
       elementId: '_cd_container'
   }
   </script>
-  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
+  <script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
   ```
 
 2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
@@ -52,7 +52,7 @@ Installation Instructions (Banner)
 
 The banner will show up wherever you put this snippet of code on your page: [**(See demo)**][3]
 ```html
-<div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
+<div><script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
 ![Blue version (default)](https://fightforthefuture.github.io/countdown-widget/demos/widget.blue.png)
 
@@ -63,7 +63,7 @@ The banner will show up wherever you put this snippet of code on your page: [**(
 Put this anywhere on your page that you want the banner to show up.
 ```html
 <script type="text/javascript">var _cd_options = { theme: 'red' };</script>
-<div><script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
+<div><script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js"></script></div>
 ```
 ![Red version](https://fightforthefuture.github.io/countdown-widget/demos/widget.red.png)
 
@@ -82,7 +82,7 @@ Here's how.
       elementId: '_cd_container'
   }
   </script>
-  <script src="//fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
+  <script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js" async></script>
   ```
 
 2. Then, place this empty DIV anywhere on your page where you want the banner to appear:
