@@ -23,41 +23,44 @@
     for the JavaScript code in this page.
 */
 var animations = {
-    banner: {
+    bottomBar: {
         options: {
             debug: false,
-            url: 'https://www.battleforthenet.com',
-            theme: 'blue'
+            url: 'https://www.battleforthenet.com'
         },
         init: function(options) {
             for (var k in options) this.options[k] = options[k];
             return this;
         },
         start: function() {
-            if (this.options.theme == 'red')
-                document.body.className += ' red ';
-
-            document.querySelector('#banner').addEventListener('click', this.doClick.bind(this), false);
+            document.querySelector('a.close').addEventListener('click', this.close.bind(this), false);
+            document.querySelector('#bottomBar').addEventListener('click', this.doClick.bind(this), false);
         },
 
         getUrl: function() {
-            return sanitize(this.options.url)+'?from=banner';
+            return sanitize(this.options.url)+'?from=bottomBar';
         },
 
         doClick: function(e) {
             e.preventDefault();
-            window.open(animations.banner.getUrl());
+
+            if (e.target.className == 'close' || e.target.parentNode.className == 'close')
+                return;
+
+            window.open(animations.bottomBar.getUrl());
             trackLeaderboardStat({
                 stat: 'click',
-                data: animations.banner.getUrl(),
+                data: animations.bottomBar.getUrl(),
                 callback: function() {}
             });
+        },
+
+        close: function(e) {
+            e.preventDefault();
+            sendMessage('stop');
         }
     }
 }
 
-if (window.location.href.indexOf('RED') != -1)
-    animations.banner.options.theme = 'red';
-
 if (window.location.href.indexOf('EMBED') != -1)
-    animations.banner.start();
+    animations.bottomBar.start();

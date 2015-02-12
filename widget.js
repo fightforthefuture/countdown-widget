@@ -51,6 +51,10 @@ if (typeof _cd_options.iframe_base_path == "undefined")
 if (typeof _cd_options.animation == "undefined")
 	_cd_options.animation = 'banner';
 
+// Usually a cookie is used to dismiss the widget. You can override here.
+if (typeof _cd_options.always_show_widget == "undefined")
+	_cd_options.always_show_widget = false;
+
 /**
 --------------------------------------------------------------------------------
 ANIMATION DEFINITIONS
@@ -100,12 +104,12 @@ var _cd_animations = {
 		}
 	},
 
-	// BANNER ANIMATION
+	// AD ANIMATION
 	ad: {
 
 		// Default options: Override these with _cd_options object (see above)
 		options: {
-			modalAnimation: 'ad',
+			modalAnimation: 'block',
 			url: 'https://www.battleforthenet.com/',
 			elementId: null
 		},
@@ -132,6 +136,59 @@ var _cd_animations = {
 
 			var iframe = _cd_util.createIframe(el, this.options.modalAnimation);
 			_cd_util.bindIframeCommunicator(iframe, this);
+		}
+	},
+
+	// BOTTOM BAR ANIMATION
+	bottomBar: {
+
+		// Default options: Override these with _cd_options object (see above)
+		options: {
+			modalAnimation: 'bottomBar',
+			url: 'https://www.battleforthenet.com/'
+		},
+
+		// init copies the _cd_options properties over the default options
+		init: function(options) {
+			for (var k in options) this.options[k] = options[k];
+			return this;
+		},
+
+		// what to do when the animation starts
+		start: function() {
+
+			var css = '#_cd_iframe { width: 650px; height: 93px; \
+					   position: fixed; left: 50%; bottom: 15px; \
+					   margin-left: -325px; \
+					   -ms-transition: all .75s ease-in; \
+    				   -o-transition: all .75s ease-in; \
+    				   -moz-transition: all .75s ease-in; \
+    				   -webkit-transition: all .75s ease-in; \
+    				   transition: all .75s ease-in; opacity: 0; \
+    				   box-shadow: 0px 0px 20px rgba(0, 0, 0, .5); \
+    				   border-radius: 100px; } \
+    				   #_cd_iframe._cd_visible { opacity: 1; }';
+			_cd_util.injectCSS('_cd_iframe_css', css);
+
+			var el = document.body;
+			var iframe = _cd_util.createIframe(el, this.options.modalAnimation);
+			_cd_util.bindIframeCommunicator(iframe, this);
+		},
+
+		// This animation has an anim
+		animationReady: function() {
+			setTimeout(function() {
+				document.getElementById('_cd_iframe').className = '_cd_visible';
+			}, 100);
+		},
+
+		// This animation allows the user to close it
+		stop: function() {
+			document.getElementById('_cd_iframe').className = '';
+			_cd_util.setCookie('_COUNTDOWN_BOTTOMBAR_DISMISSED', 'true', 365);
+			setTimeout(function() {
+				_cd_util.destroyIframe();
+			}, 750);
 		}
 	},
 }
@@ -200,11 +257,39 @@ var _cd_util = {
 			switch (e.data.requestType) {
 				case 'getAnimation':
 					iframe.style.display = 'block';
+					if (typeof animation.animationReady == "function")
+						animation.animationReady();
 					sendMessage('putAnimation', animation.options);
+					break;
+				case 'stop':
+					animation.stop();
 					break;
 			}
 		}, false);
 
+	},
+
+	// Set a cookie. Used to permanently dismiss the bottomBar widget.
+	setCookie: function(name,val,exdays)
+	{
+		var d = new Date();
+		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var expires = "expires="+d.toGMTString();
+		document.cookie = name + "=" + val + "; " + expires;
+	},
+
+	// Get a cookie. Used to permanently dismiss the bottomBar widget.
+	getCookie: function(cname)
+	{
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++)
+  		{
+  			var c = ca[i].trim();
+  			if (c.indexOf(name)==0)
+  				return c.substring(name.length,c.length);
+  		}
+		return "";
 	}
 }
 
@@ -214,6 +299,13 @@ MAIN FUNCTIONALITY (called once the page is ready)
 --------------------------------------------------------------------------------
 */
 var ready = function() {
+	// The bottomBar widget can be permanently dismissed (via cookie).
+	// Should we show the widget, regardless?
+	var url_override = window.location.href.indexOf('SHOW_CD_WIDGET') > -1;
+	if (!_cd_options.always_show_widget && url_override == false)
+		if (_cd_util.getCookie('_COUNTDOWN_BOTTOMBAR_DISMISSED'))
+			return;
+
 	var animation = _cd_animations[_cd_options.animation];
 	animation.init(_cd_options).start();
 }
@@ -226,9 +318,7 @@ if (curState=="complete" || curState=="loaded" || curState=="interactive") {
 	document.addEventListener('DOMContentLoaded', ready, false);
 }
 
-
 })(); // :)
-
 
 var target = document.documentElement;
 while (target.childNodes.length && target.lastChild.nodeType == 1)

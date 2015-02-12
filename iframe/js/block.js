@@ -23,7 +23,7 @@
     for the JavaScript code in this page.
 */
 var animations = {
-    banner: {
+    block: { 
         options: {
             debug: false,
             url: 'https://www.battleforthenet.com',
@@ -37,19 +37,19 @@ var animations = {
             if (this.options.theme == 'red')
                 document.body.className += ' red ';
 
-            document.querySelector('#banner').addEventListener('click', this.doClick.bind(this), false);
+            document.querySelector('#block').addEventListener('click', this.doClick.bind(this), false);
         },
 
         getUrl: function() {
-            return sanitize(this.options.url)+'?from=banner';
+            return sanitize(this.options.url)+'?from=ad';
         },
 
         doClick: function(e) {
             e.preventDefault();
-            window.open(animations.banner.getUrl());
+            window.open(animations.block.getUrl());
             trackLeaderboardStat({
                 stat: 'click',
-                data: animations.banner.getUrl(),
+                data: animations.block.getUrl(),
                 callback: function() {}
             });
         }
@@ -57,7 +57,7 @@ var animations = {
 }
 
 if (window.location.href.indexOf('RED') != -1)
-    animations.banner.options.theme = 'red';
+    animations.block.options.theme = 'red';
 
 if (window.location.href.indexOf('EMBED') != -1)
-    animations.banner.start();
+    animations.block.start(); 

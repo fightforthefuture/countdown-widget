@@ -12,6 +12,17 @@ To stay up-to-date on developments, please subscribe to our
 the widget, please [submit an issue][4] or [email Jeff Lyon][5].
 
 
+Installation Instructions (Floating Bottom Bar)
+-----------------------------------------------
+
+To install the floating bottom bar, paste this code at the bottom of your page,
+right before the closing /BODY tag: [**(See demo)**][9]
+```html
+<script type="text/javascript">var _cd_options = { animation: 'bottomBar' };</script>
+<script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script>
+```
+![Bottom Bar](https://fightforthefuture.github.io/countdown-widget/demos/bottomBar.png)
+
 Installation Instructions (Ad)
 ------------------------------
 
@@ -104,3 +115,4 @@ Modern browsers, and the two latest versions of Internet Explorer (10 and 11).
 [6]: https://github.com/fightforthefuture/countdown-widget/blob/master/widget.js
 [7]: https://fightforthefuture.github.io/countdown-widget/demos/banner.dark.html
 [8]: https://fightforthefuture.github.io/countdown-widget/demos/ad.html
+[9]: https://fightforthefuture.github.io/countdown-widget/demos/bottomBar.html
