@@ -19,7 +19,7 @@ To install the floating bottom bar, paste this code at the bottom of your page,
 right before the closing /BODY tag: [**(See demo)**][9]
 ```html
 <script type="text/javascript">var _cd_options = { animation: 'bottomBar' };</script>
-<script src="//fightforthefuture.github.io/countdown-widget/widget.min.js"></script>
+<script src="https://fightforthefuture.github.io/countdown-widget/widget.min.js"></script>
 ```
 ![Bottom Bar](https://fightforthefuture.github.io/countdown-widget/demos/bottomBar.png)
 
