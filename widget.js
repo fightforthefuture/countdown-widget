@@ -158,14 +158,14 @@ var _cd_animations = {
 		start: function() {
 
 			var css = '#_cd_iframe { width: 650px; height: 93px; \
-					   position: fixed; left: 50%; bottom: 15px; \
+					   position: fixed; left: 50%; bottom: 20px; \
 					   margin-left: -325px; \
 					   -ms-transition: all .75s ease-in; \
     				   -o-transition: all .75s ease-in; \
     				   -moz-transition: all .75s ease-in; \
     				   -webkit-transition: all .75s ease-in; \
     				   transition: all .75s ease-in; opacity: 0; \
-    				   box-shadow: 0px 0px 20px rgba(0, 0, 0, .5); \
+    				   box-shadow: 0px 5px 20px rgba(0, 0, 0, .5); \
     				   border-radius: 100px; } \
     				   #_cd_iframe._cd_visible { opacity: 1; }';
 			_cd_util.injectCSS('_cd_iframe_css', css);
