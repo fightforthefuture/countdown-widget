@@ -166,7 +166,7 @@ var _cd_animations = {
     				   -webkit-transition: all .75s ease-in; \
     				   transition: all .75s ease-in; opacity: 0; \
     				   box-shadow: 0px 5px 20px rgba(0, 0, 0, .5); \
-    				   border-radius: 100px; } \
+    				   border-radius: 100px; z-index: 9001; } \
     				   #_cd_iframe._cd_visible { opacity: 1; }';
 			_cd_util.injectCSS('_cd_iframe_css', css);
 
