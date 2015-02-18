@@ -14,7 +14,7 @@
  FOR A PARTICULAR PURPOSE. See the GNU GPL for more details.
 
  As additional permission under GNU GPL version 3 section 7, you
- may distribute non-source (e.g., minimized or compacted) forms of 
+ may distribute non-source (e.g., minimized or compacted) forms of
  that code without the copy of the GNU GPL normally required by
  section 4, provided you include this license notice and a URL
  through which recipients can access the Corresponding Source.
@@ -54,6 +54,16 @@ if (typeof _cd_options.animation == "undefined")
 // Usually a cookie is used to dismiss the widget. You can override here.
 if (typeof _cd_options.always_show_widget == "undefined")
 	_cd_options.always_show_widget = false;
+
+// What path to use for the cookie, using "/" by default.
+if (typeof _cd_options.cookie_path == "undefined")
+	_cd_options.cookie_path = "/";
+
+// What domain to use for the cookie, using current domain by default but when
+// having a multi-subdomain-site you might want to change this to ".domain.com"
+// (this sets a cookie for all subdomains)
+if (typeof _cd_options.cookie_domain == "undefined")
+	_cd_options.cookie_domain = document.location.hostname;
 
 /**
 --------------------------------------------------------------------------------
@@ -274,8 +284,10 @@ var _cd_util = {
 	{
 		var d = new Date();
 		d.setTime(d.getTime()+(exdays*24*60*60*1000));
+		var path = "path="+_cd_options.cookie_path;
+		var domain = "domain="+_cd_options.cookie_domain;
 		var expires = "expires="+d.toGMTString();
-		document.cookie = name + "=" + val + "; " + expires;
+		document.cookie = name + "=" + val + "; " + path + "; " + domain + "; " + expires;
 	},
 
 	// Get a cookie. Used to permanently dismiss the bottomBar widget.
