@@ -2,13 +2,27 @@
 @spinner_blade_color: #00aeff;
 @spinner_animation_duration: 2s;
 
-@-webkit-keyframes bladeFade {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+@-webkit-keyframes bladeSpin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+    }
 }
-@keyframes bladeFade {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+@keyframes bladeSpin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
 }
 
 
@@ -19,14 +33,21 @@
     width: 100%;
     height: 100%;
 
-
+    -webkit-animation-duration: @spinner_animation_duration;
+    animation-duration: @spinner_animation_duration;
+    -webkit-animation-name: bladeSpin;
+    animation-name: bladeSpin;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 
     .blade {
         position: absolute;
         left: 0%;
         top: 50%;
         margin-top: -4%;
-        height: 8%; 
+        height: 8%;
         width: 100%;
 
         > div {
@@ -37,15 +58,6 @@
             border-radius: 1000px;
             opacity: 1;
             box-shadow: 0px 0px 10px @spinner_blade_color;
-
-            -webkit-animation-duration: @spinner_animation_duration; 
-            animation-duration: @spinner_animation_duration;
-            -webkit-animation-name: bladeFade;
-            animation-name: bladeFade;
-            -webkit-animation-timing-function: linear;
-            animation-timing-function: linear;
-            -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
         }
 
         &.d02 {
@@ -54,8 +66,7 @@
             transform: rotate(-30deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*1;
-                animation-delay: -(@spinner_animation_duration/12)*1;
+                opacity: 0.9;
             }
         }
 
@@ -65,8 +76,7 @@
             transform: rotate(-60deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*2;
-                animation-delay: -(@spinner_animation_duration/12)*2;
+                opacity: 0.8;
             }
         }
 
@@ -76,8 +86,7 @@
             transform: rotate(-90deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*3;
-                animation-delay: -(@spinner_animation_duration/12)*3;
+                opacity: 0.7;
             }
         }
 
@@ -87,8 +96,7 @@
             transform: rotate(-120deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*4;
-                animation-delay: -(@spinner_animation_duration/12)*4;
+                opacity: 0.6;
             }
         }
 
@@ -98,8 +106,7 @@
             transform: rotate(-150deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*5;
-                animation-delay: -(@spinner_animation_duration/12)*5;
+                opacity: 0.5;
             }
         }
 
@@ -109,8 +116,7 @@
             transform: rotate(-180deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*6;
-                animation-delay: -(@spinner_animation_duration/12)*6;
+                opacity: 0.4;
             }
         }
 
@@ -120,8 +126,7 @@
             transform: rotate(-210deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*7;
-                animation-delay: -(@spinner_animation_duration/12)*7;
+                opacity: 0.3;
             }
         }
 
@@ -131,8 +136,7 @@
             transform: rotate(-240deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*8;
-                animation-delay: -(@spinner_animation_duration/12)*8;
+                opacity: 0.2;
             }
         }
 
@@ -142,30 +146,7 @@
             transform: rotate(-270deg);
 
             > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*9;
-                animation-delay: -(@spinner_animation_duration/12)*9;
-            }
-        }
-
-        &.d11 {
-            -ms-transform: rotate(-300deg);
-            -webkit-transform: rotate(-300deg);
-            transform: rotate(-300deg);
-
-            > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*10;
-                animation-delay: -(@spinner_animation_duration/12)*10;
-            }
-        }
-
-        &.d12 {
-            -ms-transform: rotate(-330deg);
-            -webkit-transform: rotate(-330deg);
-            transform: rotate(-330deg);
-
-            > div {
-                -webkit-animation-delay: -(@spinner_animation_duration/12)*11;
-                animation-delay: -(@spinner_animation_duration/12)*11;
+                opacity: 0.1;
             }
         }
 
