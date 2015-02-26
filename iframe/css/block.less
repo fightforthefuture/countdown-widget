@@ -45,7 +45,7 @@ body {
     top: 0px;
     width: 100%;
     height: 100%;
-    background: #0f1620 url(../../images/curtains.png);
+    background: #0f1620; /* url(../../images/curtains.png); */
     cursor: pointer;
 
     #loader {
@@ -117,10 +117,13 @@ body {
 
     h2 {
         position: absolute;
-        left: 14px;
-        top: 112px;
+        left: 0px;
+        top: 3px;
+        width: 100%;
+        text-align: center;
         margin: 0;
         padding: 0;
+        font-weight: 500;
         color: white;
         font-size: 33.27px;
         text-transform: uppercase;
@@ -131,13 +134,15 @@ body {
     }
     h3 {
         position: absolute;
-        left: 15px;
-        top: 138px;
-        font-weight: 500;
+        left: 0px;
+        top: 25px;
+        width: 100%;
+        text-align: center;
+        font-weight: 800;
         margin: 0;
         padding: 0;
         color: white;
-        font-size: 46.28px;
+        font-size: 60px;
         text-transform: uppercase;
         letter-spacing: .7px;
         -webkit-font-smoothing: antialiased;
@@ -146,13 +151,49 @@ body {
     }
     h4 {
         position: absolute;
-        left: 14px;
-        top: 188px;
+        left: 0px;
+        top: 74px;
+        width: 100%;
+        text-align: center;
+        font-weight: 800;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-size: 65px;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        white-space: nowrap;
+    }
+    h5 {
+        position: absolute;
+        left: 0px;
+        top: 144px;
+        width: 100%;
+        text-align: center;
         font-weight: 500;
         margin: 0;
         padding: 0;
         color: white;
-        font-size: 19.67px;
+        font-size: 26.5px;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        white-space: nowrap;
+    }
+    h6 {
+        position: absolute;
+        left: 0px;
+        top: 178px;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-size: 22px;
         text-transform: uppercase;
         letter-spacing: .4px;
         -webkit-font-smoothing: antialiased;
@@ -166,20 +207,26 @@ body {
         left: 0px;
         width: 100%;
         box-sizing: border-box;
-        height: 30px;
+        height: 62px;
         background: #01adff;
-        line-height: 31px;
         font-weight: 500;
-        font-size: 11px;
+        padding-top: 8px;
+        line-height: 23px;
         text-transform: uppercase;
         text-align: center;
         color: black;
 
         span {
             color: white;
-            font-size: 16px;
+            font-size: 22px;
             letter-spacing: .5px;
-            font-weight: bold;
+            font-weight: 500;
+
+            strong {
+                display: block;
+                font-weight: 800;
+                font-size: 24px;
+            }
         }
     }
 }

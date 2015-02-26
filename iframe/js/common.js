@@ -219,4 +219,4 @@ Countdown.prototype.updateDates = function(difference) {
 };
 
 
-new Countdown();
+// new Countdown();

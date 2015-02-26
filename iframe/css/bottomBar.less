@@ -12,26 +12,6 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('../../../font/Montserrat-Bold.eot');
-    src: url('../../../font/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../../../font/Montserrat-Bold.woff') format('woff'),
-         url('../../../font/Montserrat-Bold.ttf') format('truetype'),
-         url('../../../font/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Montserrat-Regular';
-    src: url('../../../font/Montserrat-Regular.eot');
-    src: url('../../../font/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../../../font/Montserrat-Regular.woff') format('woff'),
-         url('../../../font/Montserrat-Regular.ttf') format('truetype'),
-         url('../../../font/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 
 html {
     height: 100%;
@@ -40,7 +20,7 @@ html {
 }
 body {
     height: 100%;
-    font-family: "Montserrat-Regular", sans-serif;
+    font-family: "brandon-grotesque", sans-serif;
     margin: 0;
     padding: 0 0 0 10px;
     overflow: hidden;
@@ -66,18 +46,59 @@ body {
     width: 100%;
     height: 100%;
     background: #192a39;
-    border-radius: 100px;
     cursor: pointer;
 
     header {
         position: absolute;
         left: 0px;
         top: 0px;
-        width: 350px;
+        width: 340px;
         height: 93px;
         background: #0f1620;
-        border-radius: 100px;
 
+        h1 {
+            position: absolute;
+            left: 0px;
+            top: 12px;
+            width: 335px;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            font-size: 19px;
+            font-weight: 400;
+
+            strong {
+                font-weight: 500;
+                font-size: 23px;
+            }
+        }
+        h2 {
+            position: absolute;
+            left: 0px;
+            top: 34px;
+            width: 335px;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
+            font-size: 34px;
+            font-weight: 500;
+            vertical-align: bottom;
+
+            em {
+                display: inline-block;
+                padding-top: 8px;
+                font-size: 15px;
+                font-style: normal;
+                vertical-align: top;
+                font-weight: 300;
+            }
+        }
+
+        /*
         #loader {
             position: absolute;
             left: 6px;
@@ -86,7 +107,6 @@ body {
             height: 79px;
             box-sizing: border-box;
             padding: 7px;
-            border-radius: 100px;
             background: #0f1620;
         }
 
@@ -120,7 +140,6 @@ body {
             font-family: "Digital7Mono";
             text-shadow: 0px 0px 10px @main_color;
 
-            /* Give this element its own layer */
             -webkit-transform: translateZ(0);
             transform: translateZ(0);
         }
@@ -146,23 +165,24 @@ body {
                 left: 287px;
             }
         }
+        */
     }
 
     footer {
         position: absolute;
-        left: 358px;
+        left: 343px;
         top: 0px;
-        width: 250px;
+        width: 270px;
         height: 93px;
         box-sizing: border-box;
         text-align: center;
 
         h2 {
             margin: 0;
-            padding: 11px 0 5px 0;
+            padding: 14px 0 0px 0;
             color: white;
-            font-family: "Montserrat-Regular", sans-serif;
-            font-size: 15.45px;
+            font-weight: 300;
+            font-size: 19px;
             text-align: center;
             text-transform: uppercase;
             -webkit-font-smoothing: antialiased;
@@ -175,15 +195,15 @@ body {
             background: #00aeff;
             box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
             color: white;
-            font-family: "Montserrat-Regular", sans-serif;
+
             border: 0px none transparent;
             border-radius: 20px;
             text-transform: uppercase;
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.01);
-            font-size: 13px;
+            font-size: 19px;
             font-weight: bold;
             letter-spacing: 1px;
-            padding: 5px 13px 5px 13px;
+            padding: 1px 10px 0px 10px;
 
         }
     }
@@ -193,7 +213,7 @@ body {
         top: 0px;
         text-decoration: none;
         box-sizing: border-box;
-        width: 45px;
+        width: 40px;
         height: 95px;
         -ms-transition: opacity .75s ease-out;
         -o-transition: opacity .75s ease-out;
@@ -203,7 +223,7 @@ body {
 
         span {
             display: block;
-            margin: 35px auto;
+            margin: 7px auto;
             box-sizing: border-box;
             width: 23px;
             height: 23px;

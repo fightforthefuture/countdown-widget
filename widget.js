@@ -176,7 +176,7 @@ var _cd_animations = {
     				   -webkit-transition: all .75s ease-in; \
     				   transition: all .75s ease-in; opacity: 0; \
     				   box-shadow: 0px 5px 20px rgba(0, 0, 0, .5); \
-    				   border-radius: 100px; z-index: 9001; } \
+    				   border-radius: 0px; z-index: 9001; } \
     				   #_cd_iframe._cd_visible { opacity: 1; }';
 			_cd_util.injectCSS('_cd_iframe_css', css);
 
@@ -316,7 +316,8 @@ var ready = function() {
 	var url_override = window.location.href.indexOf('SHOW_CD_WIDGET') > -1;
 	if (!_cd_options.always_show_widget && url_override == false)
 		if (_cd_util.getCookie('_COUNTDOWN_BOTTOMBAR_DISMISSED'))
-			return;
+			if (_cd_options.animation == 'bottomBar')
+				return;
 
 	var animation = _cd_animations[_cd_options.animation];
 	animation.init(_cd_options).start();
